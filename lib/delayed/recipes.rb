@@ -48,7 +48,6 @@ Capistrano::Configuration.instance.load do
 
     desc 'Restart the delayed_job process'
     task :restart, :roles => lambda { roles } do
-      puts "delayed_job args #{args.inspect}"
       run "cd #{current_path} && #{rails_env} #{delayed_job_command} restart #{args}"
     end
   end
